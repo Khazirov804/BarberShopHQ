@@ -1,0 +1,17 @@
+development:
+  adapter: sqlite3
+  database: db/barbershop.db
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: sqlite3
+  database: db/test_barbershop.db
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: sqlite3
+  database: db/production_barbershop.db
+  pool: 5
+  timeout: 5000

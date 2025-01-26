@@ -4,13 +4,14 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'sinatra/activerecord'
 
-set :database, "sqlite3:barbershop.db"
+set :database, { adapter: "sqlite3", database: "db/BarberShop.db" }
 
 class Client < ActiveRecord::Base
+end
 
-	
+class Barber < ActiveRecord::Base
 end
 
 get '/' do
-	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
+	erb "Darova! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
 end
