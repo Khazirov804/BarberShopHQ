@@ -4,7 +4,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'sinatra/activerecord'
 
-set :database, { adapter: "sqlite3", database: "db/BarberShop.db" }
+set :database, { adapter: "sqlite3", database: "barbershop.db" }
 
 class Client < ActiveRecord::Base
 end
@@ -13,5 +13,6 @@ class Barber < ActiveRecord::Base
 end
 
 get '/' do
+	@barbers = Barber.order "created_at DESC"
 	erb :index
 end
