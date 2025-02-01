@@ -30,7 +30,7 @@
     <!-- Атрибут class="form-control" применяет стили из Bootstrap для поля -->
     <!-- Атрибут placeholder предоставляет подсказку в поле до ввода данных -->
     <!-- Атрибут value="<%=@username%>" задает значение по умолчанию, которое будет подставлено из Ruby-переменной @username -->
-    <input name="username" type="text" class="form-control" placeholder="Введите ваше имя" value="<%=@username%>">
+    <input name="client[name]" type="text" class="form-control" placeholder="Введите ваше имя" value="">
   </div>
 
   <!-- Блок для ввода номера телефона -->
@@ -40,7 +40,7 @@
     
     <!-- Поле для ввода номера телефона -->
     <!-- Атрибут value="<%=@phone%>" подставляет значение переменной @phone в поле, если оно есть -->
-    <input name="phone" type="text" class="form-control" placeholder="Введите ваш номер телефона" value="<%=@phone%>">
+    <input name="client[phone]" type="text" class="form-control" placeholder="Введите ваш номер телефона" value="">
   </div>
 
   <!-- Блок для выбора даты и времени -->
@@ -51,24 +51,9 @@
     <!-- Поле для ввода даты и времени -->
     <!-- Атрибут id="datetimepicker" используется для привязки плагина datetimepicker -->
     <!-- Атрибут value="<%=@datetime%>" подставляет значение переменной @datetime для предварительного отображения в поле -->
-    <input id="datetimepicker" name="datetime" type="text" class="form-control" placeholder="Введите дату и время для записи" value="<%=@datetime%>">
+    <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" placeholder="Введите дату и время для записи" value="">
   </div>
 
-  <!-- Блок для выбора парикмахера -->
-  <div class="form-group">
-    <!-- Метка для выбора парикмахера -->
-    <label>Выберите своего парикмахера</label>
-    
-    <!-- Выпадающий список для выбора парикмахера -->
-    <!-- Атрибут name="barber" указывает, что выбранное значение будет отправлено с этим именем -->
-    <select name="barber" class="form-control">
-
-      <% @barbers.each do |item| %>
-      <option <%= @barbers == item['name'] ? 'selected' : '' %>><%= item['name'] %></option>
-      <%end%>
-
-    </select>
-  </div>
 
   <!-- Блок для выбора цвета -->
   <div class="form-group">
@@ -78,7 +63,7 @@
     <!-- Выпадающий список для выбора цвета -->
     <!-- Атрибут id="color" используется для привязки плагина simplecolorpicker -->
     <!-- Атрибут name="color" указывает, что выбранный цвет будет передан с этим именем -->
-    <select id="color" name="color">
+    <select id="color" name="client[color]">
       <!-- Каждый option — это доступный цвет для выбора -->
       <!-- Атрибут value="#7bd148" определяет код цвета -->
       <option value="#7bd148">Green</option>
