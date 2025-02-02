@@ -30,7 +30,7 @@
     <!-- Атрибут class="form-control" применяет стили из Bootstrap для поля -->
     <!-- Атрибут placeholder предоставляет подсказку в поле до ввода данных -->
     <!-- Атрибут value="<%=@username%>" задает значение по умолчанию, которое будет подставлено из Ruby-переменной @username -->
-    <input name="client[name]" type="text" class="form-control" placeholder="Введите ваше имя" value="">
+    <input name="client[name]" type="text" class="form-control" placeholder="Введите ваше имя" value="<%=@c.name%>">
   </div>
 
   <!-- Блок для ввода номера телефона -->
@@ -40,7 +40,7 @@
     
     <!-- Поле для ввода номера телефона -->
     <!-- Атрибут value="<%=@phone%>" подставляет значение переменной @phone в поле, если оно есть -->
-    <input name="client[phone]" type="text" class="form-control" placeholder="Введите ваш номер телефона" value="">
+    <input name="client[phone]" type="text" class="form-control" placeholder="Введите ваш номер телефона" value="<%=@c.phone%>">
   </div>
 
   <!-- Блок для выбора даты и времени -->
